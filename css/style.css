@@ -1,0 +1,113 @@
+html,
+body {
+  font-family: sans-serif;
+  height: 100%;
+}
+
+#wrap-pos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100% - 110px);
+}
+#highScores div div {
+  padding: 10px;
+  font-weight: 500;
+}
+
+#highScores div div:nth-child(odd) {
+  background-color: #123bb8;
+}
+section {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+#start-cont {
+  background-color: #362ea3c0;
+}
+
+#the-infos {
+  max-width: 980px;
+  margin: 0 auto;
+  color: rgb(207, 12, 12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 30px;
+}
+
+#scores {
+  left: 45px;
+  background-color: #520726fa;
+  color: rgb(192, 208, 221);
+}
+
+#timer {
+  right: 150px;
+}
+
+#intro {
+  text-align: center;
+}
+
+button {
+  background-color: #450ae7;
+  color: rgb(5, 2, 14);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#intro button:hover {
+  background-color: #791e1e;
+}
+
+#Quiz-hold #the-title {
+  font-weight: 800;
+}
+
+#Quiz-hold button {
+  background-color: #2b0657;
+  border-radius: 5px;
+  color: rgb(243, 238, 238);
+  margin: 10px 0;
+  padding: 10px 10px;
+
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+#Quiz-hold button:hover {
+  background-color: #5845af;
+}
+
+#score-correct,
+#errorIndicator {
+  border-top: 1px solid rgb(158, 132, 132);
+  color: #7142a7;
+  font-size: 1.3em;
+  margin: 0;
+  font-style: italic;
+  font-weight: 800;
+  margin: 15px auto;
+}
+
+#records input,
+#records button {
+  margin-top: 5px;
+}
+
+.hide {
+  display: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.disable {
+  pointer-events: none;
+}
