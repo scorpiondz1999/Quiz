@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Quiz</title>
+   
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <div id="start-cont">
+        <div id="the-infos">
+            <button id="scores" href="">View High Scores</button>
+            <div id="timer">
+                <p>Time: <span id="time">0</span></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="wrap-pos">
+        <section id="intro">
+            <h1>Coding Quiz Challenge</h1>
+            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
+                answers will penalize your time by 15 seconds..</p>
+            <button>Start Quiz</button>
+
+        </section>
+
+        <section id="Quiz-hold" class="hide">
+            <p id="the-title"></p>
+            
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <div id="score-correct" class="hidden">
+                <p></p>
+            </div>
+        </section>
+
+        <section id="done" class="hide">
+            <h1>GAME OVER</h1>
+            <p>Your  score is&nbsp;<span id="score"></span></p>
+            <div id="records">
+                <p>Please Enter initials: </p><input id="initials" type="text"> <button>Submit</button>
+            </div>
+            <div id="error" class="hidden">
+                <p>&nbsp;</p>
+            </div>
+        </section>
+
+        <section id="highScores" class="hide">
+            <h1>High Scores</h1>
+            <div>
+
+            </div>
+            <button id="reset">Go Back</button> <button id="clearScores">Clear Highscores</button>
+        </section>
+    </div>
+
+
+
+
+    
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
