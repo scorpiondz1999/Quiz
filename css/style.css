@@ -45,7 +45,7 @@ section {
 }
 
 #timer {
-  right: 150px;
+  right: 140px;
 }
 
 #intro {
@@ -53,19 +53,19 @@ section {
 }
 
 button {
-  background-color: #450ae7;
-  color: rgb(5, 2, 14);
+  background-color: #4b11e9;
+  color: rgb(5, 2, 12);
   border: none;
   padding: 10px;
   border-radius: 5px;
 }
 
 #intro button:hover {
-  background-color: #791e1e;
+  background-color: #7c1919;
 }
 
 #Quiz-hold #the-title {
-  font-weight: 800;
+  font-weight: 820;
 }
 
 #Quiz-hold button {
