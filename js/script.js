@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       answer.classList.remove("disable");
     });
   };
+
   // question data
   var questionData = () => {
     theElement("#Quiz-hold p").innerHTML = questions[Count].title;
@@ -143,6 +144,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       theElement("#score-correct").classList.add("hidden");
     }, 1000);
   };
+  Array.from(answers).forEach((check) => {
   check.addEventListener("click", function (event) {
     if (this.innerHTML.substring(3, this.length) === questions[Count].answer) {
       score = score + 1;
@@ -156,19 +158,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
   });
 });
+
 var errorIndic = () => {
   clearTimeout(timeset);
   timeset = setTimeout(() => {
     theElement("#error").classList.add("hidden");
   }, 2000);
-};Array.from(answers).forEach((check) => {
+}
 
 
 // Error submitting high scores
-theElement("#records button").addEventListener("click", () => {
-  let initialsRecord = theElement("#initials").value;
+theElement("#records").addEventListener("click", () => {
+  var initialsRecord = theElement("#initials").value;
   if (initialsRecord === "") {
-    theElement("#error p").innerHTML = "Enter at least 1 character";
+    theElement("#error p").innerHTML = "";
     theElement("#error").classList.remove("hidden", errorIndic());
   } else {
     saveArray.push({
@@ -183,3 +186,33 @@ theElement("#records button").addEventListener("click", () => {
     theElement("#initials").value = "";
   }
 });
+
+// Clears highscores
+theElement("#clearScores").addEventListener("click", () => {
+  saveArray = [];
+  theElement("#highScores div").innerHTML = "";
+  localStorage.removeItem("recordsArray");
+});
+
+// Resets
+theElement("#reset").addEventListener("click", () => {
+  time = initialTime;
+  score = 0;
+  Count = 0;
+  showSection("#intro");
+});
+
+// view the high scores.
+theElement("#score").addEventListener("click", (e) => {
+  e.preventDefault();
+  clearInterval(startTime);
+  theElement("#time").innerHTML = 0;
+  time = initialTime;
+  score = 0;
+  Count = 0;
+  showSection("#highScores");
+  reset();
+});
+});
+
+
