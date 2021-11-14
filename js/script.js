@@ -92,3 +92,27 @@ document.addEventListener("DOMContentLoaded", (event) => {
       "#Quiz-hold button:nth-of-type(4)"
     ).innerHTML = `4. ${questions[Count].choices[3]}`;
   };
+
+
+  var Update = (answerRes) => {
+    theElement("#score-correct p").innerHTML = answerRes;
+    theElement("#score-correct").classList.remove("hidden", yourScore());
+    Array.from(answers).forEach((answer) => {
+      answer.classList.add("disable");
+    });
+
+    //  exist the quiz section after answering questions
+    setTimeout(() => {
+      if (Count === questions.length) {
+        showSection("#done");
+        time = 0;
+        theElement("#time").innerHTML = time;
+      } else {
+        questionData();
+
+        Array.from(answers).forEach((answer) => {
+          answer.classList.remove("disable");
+        });
+      }
+    }, 1000);
+  };
