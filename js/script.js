@@ -144,3 +144,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
       theElement("#score-correct").classList.add("hidden");
     }, 1000);
   };
+  check.addEventListener("click", function (event) {
+    if (
+      this.innerHTML.substring(3, this.length) === questions[Count].answer
+    ) {
+      score = score + 1;
+      Count = Count + 1;
+      Update("Correct");
+    } else {
+      // Wrong answers
+      time = time - 15;
+      Count = Count + 1;
+      Update("Wrong");
+    }
+  });
+});
