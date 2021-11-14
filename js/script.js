@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     ).innerHTML = `4. ${questions[Count].choices[3]}`;
   };
 
-
   var Update = (answerRes) => {
     theElement("#score-correct p").innerHTML = answerRes;
     theElement("#score-correct").classList.remove("hidden", yourScore());
@@ -145,9 +144,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }, 1000);
   };
   check.addEventListener("click", function (event) {
-    if (
-      this.innerHTML.substring(3, this.length) === questions[Count].answer
-    ) {
+    if (this.innerHTML.substring(3, this.length) === questions[Count].answer) {
       score = score + 1;
       Count = Count + 1;
       Update("Correct");
@@ -158,4 +155,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
       Update("Wrong");
     }
   });
+});
+var errorIndic = () => {
+  clearTimeout(timeset);
+  timeset = setTimeout(() => {
+    theElement("#error").classList.add("hidden");
+  }, 2000);
+};Array.from(answers).forEach((check) => {
+
+
+// Error submitting high scores
+theElement("#records button").addEventListener("click", () => {
+  let initialsRecord = theElement("#initials").value;
+  if (initialsRecord === "") {
+    theElement("#error p").innerHTML = "Enter at least 1 character";
+    theElement("#error").classList.remove("hidden", errorIndic());
+  } else {
+    saveArray.push({
+      initialRecord: initialsRecord,
+      score: score,
+    });
+    //Send value to local storage
+    localStorage.setItem("recordsArray", JSON.stringify(saveArray));
+    theElement("#highScores div").innerHTML = "";
+    showSection("#highScores");
+    reset();
+    theElement("#initials").value = "";
+  }
 });
