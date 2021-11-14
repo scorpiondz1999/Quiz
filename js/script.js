@@ -76,3 +76,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
       answer.classList.remove("disable");
     });
   };
+  // question data
+  var questionData = () => {
+    theElement("#Quiz-hold p").innerHTML = questions[Count].title;
+    theElement(
+      "#Quiz-hold button:nth-of-type(1)"
+    ).innerHTML = `1. ${questions[Count].choices[0]}`;
+    theElement(
+      "#Quiz-hold button:nth-of-type(2)"
+    ).innerHTML = `2. ${questions[Count].choices[1]}`;
+    theElement(
+      "#Quiz-hold button:nth-of-type(3)"
+    ).innerHTML = `3. ${questions[Count].choices[2]}`;
+    theElement(
+      "#Quiz-hold button:nth-of-type(4)"
+    ).innerHTML = `4. ${questions[Count].choices[3]}`;
+  };
