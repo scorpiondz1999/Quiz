@@ -116,3 +116,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
       }
     }, 1000);
   };
+  // time
+  var theTimer = () => {
+    if (time > 0) {
+      time = time - 1;
+      theElement("#time").innerHTML = time;
+    } else {
+      clearInterval(startTime);
+      theElement("#score").innerHTML = score;
+      showSection("#done");
+    }
+  };
+
+  // start time and start getting questions
+  var startTime;
+  theElement("#intro button").addEventListener("click", (e) => {
+    questionData();
+    showSection("#Quiz-hold");
+    startTime = setInterval(theTimer, 1000);
+  });
+
+  // Clear
+
+  var yourScore = () => {
+    clearTimeout(timeset);
+    timeset = setTimeout(() => {
+      theElement("#score-correct").classList.add("hidden");
+    }, 1000);
+  };

@@ -16,7 +16,7 @@ body {
 }
 
 #highScores div div:nth-child(odd) {
-  background-color: #123bb8;
+  background-color: #071f64;
 }
 section {
   max-width: 50%;
@@ -28,7 +28,7 @@ section {
 }
 
 #the-infos {
-  max-width: 980px;
+  max-width: 950px;
   margin: 0 auto;
   color: rgb(207, 12, 12);
   display: flex;
@@ -45,7 +45,7 @@ section {
 }
 
 #timer {
-  right: 140px;
+  right: 160px;
 }
 
 #intro {
@@ -61,7 +61,7 @@ button {
 }
 
 #intro button:hover {
-  background-color: #7c1919;
+  background-color: #851818;
 }
 
 #Quiz-hold #the-title {
